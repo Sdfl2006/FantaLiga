@@ -36,9 +36,9 @@ header {
     width: auto;
     margin-left: 1rem;
     border-radius: 10px;
-    background: #4cb9dd;
+    background: #4cb9dd;    
     padding: 4px;
-    box-shadow: 0 2px 8px rgba(128, 128, 128, 0);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .header-content {
