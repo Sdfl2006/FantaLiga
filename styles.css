@@ -1,0 +1,468 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eaf4ff;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header with Serie A branding */
+header {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.pl-logo {
+    height: 50px;
+    width: auto;
+    margin-left: 1rem;
+    border-radius: 10px;
+    background: #3D195B;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.sa-logo {
+    height: 50px;
+    width: auto;
+    margin-left: 1rem;
+    border-radius: 10px;
+    background: #4cb9dd;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(128, 128, 128, 0);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.Liga-logo {
+    height: 50px;
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(178, 0, 0, 0.2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Tabs with Serie A colors */
+.tabs {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #b83430;
+}
+
+.tab-button {
+    background-color: #f1f8ff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #222;
+}
+
+.tab-button:hover {
+    background-color: #d0eaff;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+}
+
+.tab-content {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,102,178,0.08);
+    overflow: hidden;
+    border: 1px solid #d0eaff;
+}
+
+.tab-pane {
+    display: none;
+    padding: 1rem;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h2 {
+    margin-bottom: 1rem;
+    color: #b83430;
+    border-bottom: 2px solid #ff4b44;
+    padding-bottom: 0.5rem;
+}
+
+/* Tables with improved styling */
+.players-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,102,178,0.04);
+}
+
+.players-table th,
+.players-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #d0eaff;
+}
+
+.players-table th:nth-child(7),
+.players-table td:nth-child(7) {
+    text-align: center;
+}
+
+/* Special styling for porterias table */
+#porterias .players-table th:nth-child(4),
+#porterias .players-table td:nth-child(4) {
+    text-align: center;
+}
+
+.players-table th {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.players-table tr:hover {
+    background-color: #eaf4ff;
+}
+
+.players-table tr:nth-child(even) {
+    background-color: #f7fbff;
+}
+
+.players-table tr:nth-child(even):hover {
+    background-color: #d0eaff;
+}
+
+/* Selected player styling */
+.players-table tr.selected td {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 50%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.players-table tr.selected:nth-child(even) td {
+    background-color: #660000;
+    color: #fff;
+}
+
+/* Buttons with Serie A styling */
+.add-player-btn,
+.move-btn,
+.edit-btn,
+.delete-btn,
+.select-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin: 0 0.25rem;
+    font-size: 0.85rem;
+}
+
+.add-player-btn {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,102,178,0.08);
+}
+
+.add-player-btn:hover {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,102,178,0.12);
+}
+
+.move-btn {
+    background-color: #b83430;
+    color: white;
+}
+
+.move-btn:hover {
+    background-color: #800000;
+    transform: translateY(-1px);
+}
+
+.move-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.move-btn:disabled:hover {
+    transform: none;
+}
+
+.edit-btn {
+    background-color: #ff4b44;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #ff4b44;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.select-btn {
+    background-color: #ae2727;
+    color: white;
+}
+
+.select-btn:hover {
+    background-color: #962121;
+    transform: translateY(-1px);
+}
+
+/* Modal with Serie A styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,102,178,0.15);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,102,178,0.18);
+    border-top: 5px solid #b83430;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #b83430;
+}
+
+/* Form with improved styling */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #b83430;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d0eaff;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #b83430;
+    box-shadow: 0 0 0 3px rgba(0,102,178,0.15);
+}
+
+#player-form button {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,102,178,0.08);
+}
+
+#player-form button:hover {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,102,178,0.12);
+}
+
+/* Hide clean sheets field by default */
+#clean-sheets-group {
+    display: none;
+}
+
+/* Show clean sheets field only for goalkeepers */
+#player-position[value="porterias"] ~ #clean-sheets-group {
+    display: block;
+}
+
+.mi-equipo-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background 0.2s;
+}
+.mi-equipo-btn:hover {
+    transform: translateY(-2px);
+}
+
+#mi-jugador-form button[type="submit"] {
+    background: linear-gradient(135deg, #b83430 0%, #ff4b44 100%);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .players-table {
+        font-size: 0.85rem;
+        min-width: 480px;
+    }
+    .tab-content, .form-group  {
+        margin-bottom: 1rem;
+    }
+    
+    .players-table th,
+    .players-table td {
+        padding: 0.5rem;
+    }
+    
+    .add-player-btn,
+    .move-btn,
+    .edit-btn,
+    .delete-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        margin: 0 0.1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .sa-logo {
+        height: 40px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+
+    .tab-content, .form-group  {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .players-table {
+        min-width: 600px;
+        width: 100%;
+    }
+
+    .mi-equipo-btn {
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 10px;
+        padding: 12px 20px;
+        
+    }
+}

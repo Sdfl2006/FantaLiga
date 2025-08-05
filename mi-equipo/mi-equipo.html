@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Equipo</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mi Equipo</h1>
+        </div>
+    </header>
+    <main>
+        <form id="team-name-form" style="max-width:400px; margin:2rem auto 1rem auto;">
+            <div class="form-group">
+                <label for="team-name">Nombre del equipo:</label>
+            </div>
+            <div class="form-group">
+                <select id="team-name">
+                    <option value="">Seleccionar Equipo</option>
+                    <option value="Milan / Avellino">Milan / Avellino</option> 
+                    <option value="Lecce">Lecce</option> 
+                    <option value="Ascoli">Ascoli</option> 
+                    <option value="Parma">Parma</option> 
+                    <option value="Pisa">Pisa</option> 
+                    <option value="Palermo">Palermo</option> 
+                    <option value="Inter">Inter</option> 
+                    <option value="Como">Como</option> 
+                    <option value="Monza">Monza</option>
+                </select>
+            </div>
+            <button class="add-player-btn" id="add-my-player-btn">Agregar Jugador</button>
+        </form>
+
+        <div class="tab-content">
+                <div id="porterias" class="tab-pane active">
+                    <h2>Porterías</h2>
+                    <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Equipo</th>
+                            <th>Posición</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    </thead>
+                    <tbody id="porterias-tbody"></tbody>
+                </table>
+
+                <h2>Defensores</h2>
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Equipo</th>
+                            <th>Posición</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="defensores-tbody"></tbody>
+                </table>
+
+                <h2>Mediocampistas</h2>
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Equipo</th>
+                            <th>Posición</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mediocampistas-tbody"></tbody>
+                </table>
+
+                <h2>Delanteros</h2>
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Equipo</th>
+                            <th>Posición</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="delanteros-tbody"></tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+    <a href="../index.html" class="mi-equipo-btn">Menú Principal</a>
+    <!-- Modal para agregar/editar jugador -->
+    <div id="mi-jugador-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-mi-jugador-modal">&times;</span>
+            <h2 id="modal-title">Agregar/Editar Jugador</h2>
+            <form id="mi-jugador-form">
+                <input type="hidden" id="mi-jugador-id">
+                <div class="form-group">
+                    <label for="mi-jugador-nombre">Nombre:</label>
+                    <input type="text" id="mi-jugador-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-team">Equipo:</label>
+                    <select id="player-team">
+                        <option value="">Seleccionar Equipo</option>
+                        <option value="Atalanta">Atalanta</option>
+                        <option value="Bolonia">Bolonia</option>
+                        <option value="Cagliari">Cagliari</option>
+                        <option value="Como">Como</option>
+                        <option value="Cremonese">Cremonese</option>
+                        <option value="Fiorentina">Fiorentina</option>
+                        <option value="Génova">Génova</option>
+                        <option value="Hellas Verona">Hellas Verona</option>
+                        <option value="Internazionale">Internazionale</option>
+                        <option value="Juventus">Juventus</option>
+                        <option value="Lazio">Lazio</option>
+                        <option value="Lecce">Lecce</option>
+                        <option value="AC Milan">AC Milan</option>
+                        <option value="Napoli">Napoli</option>
+                        <option value="Parma">Parma</option>
+                        <option value="Pisa">Pisa</option>
+                        <option value="AS Roma">AS Roma</option>
+                        <option value="Sassuolo">Sassuolo</option>
+                        <option value="Torino">Torino</option>
+                        <option value="Udinese">Udinese</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mi-jugador-posicion">Posición:</label>
+                    <select id="mi-jugador-posicion" required>
+                        <option value="porterias">Portero</option>
+                        <option value="defensores">Defensor</option>
+                        <option value="mediocampistas">Mediocampista</option>
+                        <option value="delanteros">Delantero</option>
+                    </select>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <script src="mi-equipo.js"></script>
+</body>
+</html>
