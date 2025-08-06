@@ -162,6 +162,7 @@ function switchTab(tabId) {
     if (tabButton) {
         tabButton.classList.add('active');
     }
+    updateTotalPlayersButton();
 }
 
 // Render all tables
@@ -170,6 +171,7 @@ function renderAllTables() {
     renderTable('defensores');
     renderTable('mediocampistas');
     renderTable('delanteros');
+    updateTotalPlayersButton();
 }
 
 // Render a specific table
@@ -527,3 +529,16 @@ function sortAndRender(position, column, asc) {
 document.addEventListener('DOMContentLoaded', function() {
     setupSorting();
 });
+
+function updateTotalPlayersButton() {
+    // Obtiene la pestaña activa
+    const activePane = document.querySelector('.tab-pane.active');
+    if (!activePane) return;
+    const position = activePane.id;
+    const total = players[position].length;
+    const button = document.querySelector('.jugadores-total-btn');
+    if (button) {
+        let posicion = position.charAt(0).toUpperCase() + position.slice(1);
+        button.textContent = `${posicion}: ${total}`;
+    }
+}
