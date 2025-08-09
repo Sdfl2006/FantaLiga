@@ -130,13 +130,8 @@ main {
 .players-table th,
 .players-table td {
     padding: 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid #d0eaff;
-}
-
-.players-table th:nth-child(7),
-.players-table td:nth-child(7) {
-    text-align: center;
+    text-align:center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* Special styling for porterias table */
