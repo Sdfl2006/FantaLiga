@@ -468,12 +468,12 @@ function deletePlayer(position, index) {
 
 // Save players to localStorage
 function savePlayers() {
-    localStorage.setItem('fantaSerieAPlayers', JSON.stringify(players));
+    localStorage.setItem('fantaLigaPlayers', JSON.stringify(players));
 }
 
 // Load players from localStorage
 function loadPlayers() {
-    const savedPlayers = localStorage.getItem('fantaPremierPlayers');
+    const savedPlayers = localStorage.getItem('fantaLigaPlayers');
     if (savedPlayers) {
         players = JSON.parse(savedPlayers);
         // Asegura que todos los jugadores tengan los campos nuevos
